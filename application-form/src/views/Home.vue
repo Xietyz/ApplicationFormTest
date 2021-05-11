@@ -1,13 +1,15 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <application-form/>
   </div>
 </template>
 
 <script>
+import ApplicationForm from '../components/ApplicationForm.vue'
 export default {
   name: 'Home',
   components: {
+    ApplicationForm,
   }
 }
 </script>

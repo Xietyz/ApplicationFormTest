@@ -1,7 +1,7 @@
 <template>
   <div class="form-header">
     <h1>{{ msg }}</h1>
-    <h2>header</h2>
+    <h2>header component i guess</h2>
   </div>
 </template>
 

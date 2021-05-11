@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <application-form/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import ApplicationForm from './components/ApplicationForm.vue'
+//import ApplicationForm from './components/ApplicationForm.vue'
 export default {
   name: 'App',
   components: {
-    ApplicationForm
+    //ApplicationForm
   }
 }
 </script>

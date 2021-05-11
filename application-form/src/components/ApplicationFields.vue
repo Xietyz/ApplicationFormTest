@@ -84,7 +84,8 @@ export default {
         alert("please do x lol");
       }
       //route to confirm page
-      this.$router.push("");
+      console.log("bout to head out");
+      this.$router.push({ path: 'confirmation'});
     },
   },
   data() {
