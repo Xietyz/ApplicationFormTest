@@ -60,9 +60,9 @@ Vue.use(VueRouter);
 export default {
   name: "AppFields",
   methods: {
-    SubmitClick() {
+    async SubmitClick() {
       //submit button click handler
-      axios.post("https://localhost:44331/api/test/user", {
+      await axios.post("https://localhost:44331/api/test/user", {
         orgname: this.inputOrgName,
         name: this.inputName,
         email: this.inputEmail,
@@ -77,15 +77,11 @@ export default {
       });
       if (this.inputName !== "") {
         //conditionals
-        alert(this.inputName);
         //axios.get("https://localhost:44331/api/test/user");
         //.then((response) => console.log(response.data));
-      } else {
-        alert("please do x lol");
+        //route to confirm page
+        this.$router.push({ path: "confirmation" });
       }
-      //route to confirm page
-      console.log("bout to head out");
-      this.$router.push({ path: 'confirmation'});
     },
   },
   data() {
