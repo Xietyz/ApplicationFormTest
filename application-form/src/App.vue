@@ -1,18 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-view/>
+  <div style="background-color: #eee; height: auto; min-height: 1300px;">
+    <div class="container">
+      <div class="row top-row">
+        <div class="col-md-1">column1</div>
+        <div class="col">column2.</div>
+      </div>
+    </div>
+    <div id="app">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
 //import ApplicationForm from './components/ApplicationForm.vue'
 export default {
-  name: 'App',
+  name: "App",
   components: {
     //ApplicationForm
-  }
-}
+  },
+};
 </script>
 
 <style>
@@ -23,5 +30,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.top-row{
+  background-color: green;
+  color: rgb(255, 255, 255);
 }
 </style>

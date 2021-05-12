@@ -1,53 +1,153 @@
 <template>
   <form @submit.prevent class="form-fields">
-    <span>Organisation name: </span>
-    <input class="input" v-model="inputOrgName" />
-    <p></p>
-    <span>Full name: </span>
-    <input class="input" v-model="inputName" />
-    <p></p>
-    <span>Email: </span>
-    <input class="input" v-model="inputEmail" />
-    <p></p>
-    <span>Position: </span>
-    <input class="input" v-model="inputPosition" />
-    <p></p>
-    <span>Website: </span>
-    <input class="input" v-model="inputWebsite" />
-    <p></p>
-    <span>Organisation type: </span>
-    <select class="input" style="width: 183px" v-model="selectOrg">
-      <option>{{ optionOrg1 }}</option>
-      <option>{{ optionOrg2 }}</option>
-      <option>{{ optionOrg3 }}</option>
-    </select>
-    <p></p>
-    <div v-if="selectOrg == optionOrg1">
-      <span>FCA Number: </span>
-      <input class="input" v-model="inputFCANo" />
-      <p></p>
+    <div class="container">
+      <div class="row header-row">
+        <div class="col-3"><h4 class="header-number">1:</h4></div>
+        <div class="col-9"><h5 class="input-header">Personal details</h5></div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col">
+          <label style="text-align: left; float: right">
+            Full name
+            <input class="form-control" v-model="inputName" />
+          </label>
+        </div>
+        <div class="col" style="text-align: left">
+          <label>
+            Phone number
+            <input class="form-control" v-model="inputPhoneNo" />
+          </label>
+        </div>
+      </div>
+
+      <div class="row justify-content-center" style="text-align: right">
+        <div class="col">
+          <label style="text-align: left">
+            Email
+            <input class="form-control" v-model="inputEmail" />
+          </label>
+        </div>
+        <div class="col" style="text-align: left"></div>
+      </div>
+
+      <div class="row header-row">
+        <div class="col-3"><h4 class="header-number">2:</h4></div>
+        <div class="col-9">
+          <h5 class="input-header">Organisation details</h5>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col">
+          <label style="text-align: left; float: right">
+            Organisation name
+            <input class="form-control" v-model="inputOrgName" />
+          </label>
+        </div>
+        <div class="col">
+          <label style="text-align: left; float: left">
+            Organisation type
+            <select
+              class="form-control"
+              v-model="selectOrg"
+              style="height: 38px"
+            >
+              <option>{{ optionOrg1 }}</option>
+              <option>{{ optionOrg2 }}</option>
+              <option>{{ optionOrg3 }}</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col">
+          <label style="float: right; text-align: left">
+            Website (opt.)
+            <input class="form-control" v-model="inputWebsite" />
+          </label>
+        </div>
+        <div class="col" style="text-align: left; float: left">
+          <div
+            class="col"
+            v-if="selectOrg == optionOrg1 || selectOrg == optionOrg2"
+          >
+            <label>
+              FCA No.
+              <input class="form-control" v-model="inputFCANo" />
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col">
+          <label style="float: right; text-align: left">
+            Position
+            <input class="form-control" v-model="inputPosition" />
+          </label>
+        </div>
+        <div class="col" style="text-align: left">
+          <div class="col" v-if="selectOrg == optionOrg2">
+            <label>
+              Membership No.
+              <input class="form-control" v-model="inputMembershipNo" />
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col">
+          <label style="float: right; text-align: left">
+            Address
+            <input class="form-control" v-model="inputAddress" />
+          </label>
+        </div>
+        <div class="col" style="text-align: left"></div>
+      </div>
+
+      <div class="row header-row">
+        <div class="col-3"><h4 class="header-number">3:</h4></div>
+        <div class="col-9">
+          <h5 class="input-header">Insurer indemnity details</h5>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col">
+          <label style="float: right; text-align: left">
+            Insurer
+            <input class="form-control" v-model="inputInsurer" />
+          </label>
+        </div>
+        <div class="col" style="text-align: left"></div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <label style="float: right; text-align: left">
+            Policy No.
+            <input class="form-control" v-model="inputPolicyNo" />
+          </label>
+        </div>
+        <div class="col" style="text-align: left"></div>
+      </div>
+
+      <div class="row input-row" style="margin-top: 20px">
+        <div class="col">
+          <button
+            class="button"
+            type="button"
+            @click="SubmitClick()"
+            style="margin-bottom: 15px"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <!--  -->
     </div>
-    <div v-else-if="selectOrg == optionOrg2">
-      <span>FCA Number of lead: </span>
-      <input class="input" v-model="inputFCANo" />
-      <p></p>
-      <span>Your membership number: </span>
-      <input class="input" v-model="inputMembershipNo" />
-      <p></p>
-    </div>
-    <span>Phone number: </span>
-    <input class="input" v-model="inputPhoneNo" />
-    <p></p>
-    <span>Address: </span>
-    <input class="input" v-model="inputAddress" />
-    <p></p>
-    <span>Insurer: </span>
-    <input class="input" v-model="inputInsurer" />
-    <p></p>
-    <span>Policy number: </span>
-    <input class="input" v-model="inputPolicyNo" />
-    <p></p>
-    <button type="button" @click="SubmitClick()">Submit</button>
   </form>
 </template>
 
@@ -103,20 +203,68 @@ export default {
       optionOrg1: "Directly regulated",
       optionOrg2: "Authorised representative",
       optionOrg3: "Not regulated",
+
+      //bootstrap classes
+      rowInputClass: "row input-row justify-content-center",
+      inputLabelRowClass: "col-3",
+      inputFieldRowClass: "col-3",
     };
   },
 };
+//css:
+//display: inline-block;
 </script>
 
 <style scoped>
-span {
-  text-align: right;
-  padding-right: 20px;
-  display: inline-block;
-  min-width: 200px;
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
+.input-header {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.header-number {
+  text-align: right;
+  margin-bottom: 0px;
+}
+.input-row {
+  margin-top: 15px;
+}
+.header-row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(218, 217, 217);
+}
+.form-control {
+  width: 100%;
+}
+
 .input {
-  display: inline-block;
   width: 175px;
+  float: left;
+}
+
+.button {
+  appearance: none;
+  outline: 0;
+  background-color: #2e946a;
+  border: 0;
+  padding: 10px 15px;
+  color: #ffffff;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+.button:hover {
+  background-color: rgb(83, 189, 109);
 }
 </style>

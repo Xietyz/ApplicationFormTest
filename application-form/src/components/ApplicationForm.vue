@@ -1,8 +1,19 @@
 <template>
   <div class="main-form">
-    <application-header msg="Registration" />
-    <br />
-    <application-fields/>
+    <div class="container">
+      <div class="row logo-header">
+        <div class="col">
+          <img alt="Vue logo" src="../assets/logo.png" />
+          <application-header msg="Registration" />
+        </div>
+      </div>
+
+      <div id="form-comp" class="row" style="background-color:white; border: 3px solid rgba(0,0,0,0.1);">
+        <div class="col">
+          <application-fields />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,19 +28,14 @@ export default {
     ApplicationFields,
   },
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
 
 <style scoped>
-.form-header2 {
-  font-weight: bold;
-  text-align: left;
-}
-.form-header1 {
-  text-align: left;
+.logo-header{
+  margin-bottom: 2%;
 }
 h3 {
   margin: 40px 0 0;
