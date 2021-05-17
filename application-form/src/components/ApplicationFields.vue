@@ -155,32 +155,33 @@
 import Vue from "vue";
 import axios from "axios";
 import VueRouter from "vue-router";
+
 Vue.use(VueRouter);
 
 export default {
   name: "AppFields",
   methods: {
     async SubmitClick() {
-      //submit button click handler
-      await axios.post("https://localhost:44331/api/test/user", {
-        orgname: this.inputOrgName,
-        name: this.inputName,
-        email: this.inputEmail,
-        position: this.inputPosition,
-        website: this.inputWebsite,
-        fcano: this.inputFCANo,
-        membershipno: this.inputMembershipNo,
-        phoneno: this.inputPhoneNo,
-        address: this.inputAddress,
-        insurer: this.inputInsurer,
-        policyno: this.inputPolicyNo,
-      });
       if (this.inputName !== "") {
-        //conditionals
-        //axios.get("https://localhost:44331/api/test/user");
-        //.then((response) => console.log(response.data));
+        //submit button click handler
+        await axios.post("https://localhost:44331/api/test/user", {
+          orgname: this.inputOrgName,
+          name: this.inputName,
+          email: this.inputEmail,
+          position: this.inputPosition,
+          website: this.inputWebsite,
+          fcano: this.inputFCANo,
+          membershipno: this.inputMembershipNo,
+          phoneno: this.inputPhoneNo,
+          address: this.inputAddress,
+          insurer: this.inputInsurer,
+          policyno: this.inputPolicyNo,
+        });
         //route to confirm page
+        this.$store.dispatch("incrementAct");
         this.$router.push({ path: "confirmation" });
+      } else {
+        //test
       }
     },
   },
@@ -203,16 +204,9 @@ export default {
       optionOrg1: "Directly regulated",
       optionOrg2: "Authorised representative",
       optionOrg3: "Not regulated",
-
-      //bootstrap classes
-      rowInputClass: "row input-row justify-content-center",
-      inputLabelRowClass: "col-3",
-      inputFieldRowClass: "col-3",
     };
   },
 };
-//css:
-//display: inline-block;
 </script>
 
 <style scoped>

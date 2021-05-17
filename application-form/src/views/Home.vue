@@ -1,15 +1,22 @@
 <template>
-  <div class="home">
-    <application-form/>
+  <div class="container">
+    <div class="row">
+      <div
+        class="col"
+        style="background-color: white; border: 3px solid rgba(0, 0, 0, 0.1)"
+      >
+        <application-fields />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import ApplicationForm from '../components/ApplicationForm.vue'
+import ApplicationFields from "../components/ApplicationFields.vue";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    ApplicationForm,
-  }
-}
+    ApplicationFields,
+  },
+};
 </script>

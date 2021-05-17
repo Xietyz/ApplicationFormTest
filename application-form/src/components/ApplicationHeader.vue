@@ -1,24 +1,28 @@
 <template>
-  <div class="form-header">
-    <h1>{{ msg }}</h1>
-    <h2>header component i guess</h2>
+  <div id="form-header">
+    <h1 class="headers">{{ msg }}</h1>
+    <h2 class="headers">State: {{this.stateDesc}} ({{ this.stateNo }})</h2>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  name: 'AppHeader',
+  name: "AppHeader",
   props: {
-    msg: String
+    msg: String,
   },
-  data() {
-      return{
-          //data
-      }
-  }
-}
+  computed: mapState({
+    //when state.count is changed, trigger dom updates
+    //mapstate shorthand for return this.$store.state.count
+    stateNo: (state) => state.count.stateNo,
+    stateDesc: (state) => state.count.stateDesc,
+  }),
+};
 </script>
 
 <style scoped>
-
+.headers {
+  text-align: center;
+}
 </style>

@@ -1,14 +1,11 @@
 <template>
   <div class="main-form">
     <div class="container">
-      <div class="row logo-header">
-        <div class="col">
-          <img alt="Vue logo" src="../assets/logo.png" />
-          <application-header msg="Registration" />
-        </div>
-      </div>
-
-      <div id="form-comp" class="row" style="background-color:white; border: 3px solid rgba(0,0,0,0.1);">
+      <div
+        id="form-comp"
+        class="row"
+        style="background-color: white; border: 3px solid rgba(0, 0, 0, 0.1)"
+      >
         <div class="col">
           <application-fields />
         </div>
@@ -34,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-.logo-header{
+.logo-header {
   margin-bottom: 2%;
 }
 h3 {
