@@ -133,3 +133,7 @@ C:\Users\shoan\Documents\misc\ApplicationForm\WebAp\WebAp\bin\Debug\netcoreapp3.
 C:\Users\shoan\Documents\misc\ApplicationForm\WebAp\WebAp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\shoan\Documents\misc\ApplicationForm\WebAp\WebAp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\shoan\Documents\misc\ApplicationForm\WebAp\WebAp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\shoan\Documents\misc\ApplicationForm\WebAp\WebAp\bin\Debug\netcoreapp3.1\Azure.Core.dll
+C:\Users\shoan\Documents\misc\ApplicationForm\WebAp\WebAp\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
+C:\Users\shoan\Documents\misc\ApplicationForm\WebAp\WebAp\bin\Debug\netcoreapp3.1\Azure.Storage.Common.dll
+C:\Users\shoan\Documents\misc\ApplicationForm\WebAp\WebAp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll

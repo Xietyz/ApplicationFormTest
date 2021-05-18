@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAp.Models;
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 
 namespace WebAp.Controllers
 {
@@ -23,14 +26,14 @@ namespace WebAp.Controllers
 
         // GET: api/MyClasses
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Models.MyClass>>> GetTodoItems()
+        public async Task<ActionResult<IEnumerable<MyClass>>> GetTodoItems()
         {
             return await _context.TodoItems.ToListAsync();
         }
 
         // GET: api/MyClasses/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Models.MyClass>> GetMyClass(long id)
+        public async Task<ActionResult<MyClass>> GetMyClass(long id)
         {
             var myClass = await _context.TodoItems.FindAsync(id);
 
@@ -46,7 +49,7 @@ namespace WebAp.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMyClass(long id, Models.MyClass myClass)
+        public async Task<IActionResult> PutMyClass(long id, MyClass myClass)
         {
             if (id != myClass.Id)
             {
@@ -70,7 +73,6 @@ namespace WebAp.Controllers
                     throw;
                 }
             }
-
             return NoContent();
         }
 
@@ -81,15 +83,13 @@ namespace WebAp.Controllers
         [Route("user")]
         public MyClass PostUser(MyClass newUser)
         {
-            //_context.TodoItems.Add(myClass);
-            // await _context.SaveChangesAsync();
             //creating new user
             return newUser;
         }
 
         // DELETE: api/MyClasses/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Models.MyClass>> DeleteMyClass(long id)
+        public async Task<ActionResult<MyClass>> DeleteMyClass(long id)
         {
             var myClass = await _context.TodoItems.FindAsync(id);
             if (myClass == null)
@@ -109,18 +109,18 @@ namespace WebAp.Controllers
         }
     }
 
-    public class MyClass
-    {
-        public string OrgName { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Position { get; set; }
-        public string Website { get; set; }
-        public string FCANo { get; set; }
-        public string MembershipNo { get; set; }
-        public string PhoneNo { get; set; }
-        public string Address { get; set; }
-        public string Insurer { get; set; }
-        public string PolicyNo { get; set; }
-    }
+    //public class MyClass
+    //{
+    //    public string OrgName { get; set; }
+    //    public string Name { get; set; }
+    //    public string Email { get; set; }
+    //    public string Position { get; set; }
+    //    public string Website { get; set; }
+    //    public string FCANo { get; set; }
+    //    public string MembershipNo { get; set; }
+    //    public string PhoneNo { get; set; }
+    //    public string Address { get; set; }
+    //    public string Insurer { get; set; }
+    //    public string PolicyNo { get; set; }
+    //}
 }

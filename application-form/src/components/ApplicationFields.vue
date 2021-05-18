@@ -134,6 +134,13 @@
         <div class="col" style="text-align: left"></div>
       </div>
 
+      <div class="row header-row">
+        <div class="col-3"><h4 class="header-number">4:</h4></div>
+        <div class="col-9">
+          <h5 class="input-header">Uhhhh.</h5>
+        </div>
+      </div>
+      <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue-dropzone>
       <div class="row input-row" style="margin-top: 20px">
         <div class="col">
           <button
@@ -155,11 +162,16 @@
 import Vue from "vue";
 import axios from "axios";
 import VueRouter from "vue-router";
+import vue2Dropzone from 'vue2-dropzone'
+import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 
 Vue.use(VueRouter);
 
 export default {
   name: "AppFields",
+  components: {
+    vueDropzone: vue2Dropzone
+  },
   methods: {
     async SubmitClick() {
       if (this.inputName !== "") {
@@ -180,8 +192,6 @@ export default {
         //route to confirm page
         this.$store.dispatch("incrementAct");
         this.$router.push({ path: "confirmation" });
-      } else {
-        //test
       }
     },
   },
@@ -197,13 +207,21 @@ export default {
       inputPhoneNo: "",
       inputFCANo: "",
       inputAddress: "",
-      //professional insurance details
+
       inputInsurer: "",
       inputPolicyNo: "",
-      selectOrg: "",
+
+      selectOrg: "Not regulated",
       optionOrg1: "Directly regulated",
       optionOrg2: "Authorised representative",
       optionOrg3: "Not regulated",
+
+      dropzoneOptions: {
+        url: "https://localhost:44331/api/filetest/file",
+        thumbnailWidth: 150,
+        maxFilesize: 0.5,
+        headers: { "My-Awesome-Header": "header value" },
+      },
     };
   },
 };
