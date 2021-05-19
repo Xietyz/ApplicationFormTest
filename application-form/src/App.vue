@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #eee; height: auto; min-height: 1475px">
+  <div style="background-color: #eee; height: auto; min-height: 1550px">
     <div class="container">
       <div class="row top-row">
         <div class="col-md-1">s {{ this.$store.state.count.stateNo }}</div>

@@ -25,6 +25,7 @@ namespace WebAp.Controllers
         }
 
         // GET: api/MyClasses
+        //[HttpGet]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MyClass>>> GetTodoItems()
         {
@@ -79,8 +80,9 @@ namespace WebAp.Controllers
         // POST: api/MyClasses
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        //[Route("user")]
         [HttpPost]
-        [Route("user")]
+        [Route("/")]
         public MyClass PostUser(MyClass newUser)
         {
             //creating new user

@@ -11,13 +11,10 @@ namespace WebAp.Models
     public class FileClass
     {
         public long Id { get; set; }
-        public IFormFile file { get; set; }
+        public IFormFile NewFile { get; set; }
         public FileClass(IFormFile file)
         {
-            this.file = file;
-        }
-        public FileClass()
-        {
+            this.NewFile = file;
         }
         public async Task ContainerUpload()
         {
@@ -36,17 +33,13 @@ namespace WebAp.Models
             }
 
             // Get a reference to a blob
-            BlobClient blobClient = containerClient.GetBlobClient(file.FileName);
-
-            Console.WriteLine("Uploading to Blob storage as blob:\n\t {0}\n", blobClient.Uri);
+            BlobClient blobClient = containerClient.GetBlobClient(NewFile.FileName);
 
             // Open the file and upload its data
-            using (var stream = file.OpenReadStream())
+            using (var stream = NewFile.OpenReadStream())
             {
                 await blobClient.UploadAsync(stream, true);
             }
-               
-   
         }
     }
 }

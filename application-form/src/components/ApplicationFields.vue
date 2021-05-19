@@ -140,7 +140,17 @@
           <h5 class="input-header">Uhhhh.</h5>
         </div>
       </div>
-      <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue-dropzone>
+
+      <div class="row">
+        <div class="col" style="margin-top: 20px">
+          <vue-dropzone
+            ref="myVueDropzone"
+            id="dropzone"
+            :options="dropzoneOptions"
+          />
+        </div>
+      </div>
+
       <div class="row input-row" style="margin-top: 20px">
         <div class="col">
           <button
@@ -162,15 +172,15 @@
 import Vue from "vue";
 import axios from "axios";
 import VueRouter from "vue-router";
-import vue2Dropzone from 'vue2-dropzone'
-import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+import vue2Dropzone from "vue2-dropzone";
+import "vue2-dropzone/dist/vue2Dropzone.min.css";
 
 Vue.use(VueRouter);
 
 export default {
   name: "AppFields",
   components: {
-    vueDropzone: vue2Dropzone
+    vueDropzone: vue2Dropzone,
   },
   methods: {
     async SubmitClick() {
@@ -228,6 +238,10 @@ export default {
 </script>
 
 <style scoped>
+.col {
+  max-width: 500px;
+  margin: 0 auto;
+}
 label {
   margin-top: 10px;
   margin-bottom: 5px;
