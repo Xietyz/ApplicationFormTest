@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shoan\\Documents\\misc\\ApplicationForm\\WebAp\\WebAp\\WebAp.csproj": {}
+    "C:\\Users\\shoan\\Documents\\misc\\ApplicationFormTest-main\\ApplicationFormTest\\WebAp\\WebAp\\WebAp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shoan\\Documents\\misc\\ApplicationForm\\WebAp\\WebAp\\WebAp.csproj": {
+    "C:\\Users\\shoan\\Documents\\misc\\ApplicationFormTest-main\\ApplicationFormTest\\WebAp\\WebAp\\WebAp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shoan\\Documents\\misc\\ApplicationForm\\WebAp\\WebAp\\WebAp.csproj",
+        "projectUniqueName": "C:\\Users\\shoan\\Documents\\misc\\ApplicationFormTest-main\\ApplicationFormTest\\WebAp\\WebAp\\WebAp.csproj",
         "projectName": "WebAp",
-        "projectPath": "C:\\Users\\shoan\\Documents\\misc\\ApplicationForm\\WebAp\\WebAp\\WebAp.csproj",
+        "projectPath": "C:\\Users\\shoan\\Documents\\misc\\ApplicationFormTest-main\\ApplicationFormTest\\WebAp\\WebAp\\WebAp.csproj",
         "packagesPath": "C:\\Users\\shoan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shoan\\Documents\\misc\\ApplicationForm\\WebAp\\WebAp\\obj\\",
+        "outputPath": "C:\\Users\\shoan\\Documents\\misc\\ApplicationFormTest-main\\ApplicationFormTest\\WebAp\\WebAp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\shoan\\AppData\\Roaming\\NuGet\\NuGet.Config",
